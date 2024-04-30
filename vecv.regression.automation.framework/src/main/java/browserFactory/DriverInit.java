@@ -37,6 +37,7 @@ public class DriverInit {
                     LOG.INFO("Launching browser");
                     break;
                 case "firefox":
+
                     break;
                 case "edge":
                     break;
