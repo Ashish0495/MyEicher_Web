@@ -1,13 +1,12 @@
 package browserFactory;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import logger.LOG;
+import java.io.File;
+import java.util.HashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.io.File;
-import java.util.HashMap;
+import logger.LOG;
 
 public class DriverInit {
 
@@ -20,13 +19,12 @@ public class DriverInit {
         if(driver == null) {
             switch (browserType) {
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     HashMap<String, Object> chromePref = new HashMap<String, Object>();
                     chromePref.put("profile.default_content_settings.popups", 0);
                     chromePref.put("download.default_directory", System.getProperty("user.dir")+ File.separator+"src"+File.separator+"test"+File.separator+"resources");
                     chromePref.put("browser.set_download_behavior", "{ behavior: 'allow' , downloadPath: '"+ System.getProperty("user.dir")+ File.separator+"src"+File.separator+"test"+File.separator+"resources"+"'}");
-                    // options.addArguments("--headless");
+                    options.addArguments("--headless");
                     options.addArguments("--disable-notifications");
                     options.addArguments("window-size=1200x600");
                     options.addArguments("--disable-popup-blocking");

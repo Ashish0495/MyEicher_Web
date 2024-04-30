@@ -1,10 +1,10 @@
 package constants;
 
-import logger.LOG;
-import utilities.CommonUtils;
-
 import java.io.File;
 import java.nio.file.Paths;
+
+import logger.LOG;
+import utilities.CommonUtils;
 
 public class FileConstant {
   private static final String  environmentPropertyFilePath

@@ -4,7 +4,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.LandingPageV1;
 import pageObjects.LoginPage;
-
 import static reporter.ExtentTestManager.startTest;
 
 public class VehicleTrackTestV1 extends SuiteSetup {
